@@ -78,3 +78,7 @@ ENV DOCKER=true
 RUN node dist/scripts/install.js
 
 CMD ["pnpm", "start"]
+ENV PORT=3123
+EXPOSE 3123
+CMD ["npm", "start"]
+
