@@ -74,11 +74,13 @@ COPY package.json /app/
 ENV DATA_DIR_PATH=/app/data
 ENV DOCKER=true
 
-# install kokoro, headless chrome and ensure music files are present
-RUN node dist/scripts/install.js
+# app configuration via environment variables
+ENV DATA_DIR_PATH=/app/data
+ENV DOCKER=true
+ENV PORT=3123
+
+EXPOSE 3123
 
 CMD ["pnpm", "start"]
-ENV PORT=3123
-EXPOSE 3123
-CMD ["npm", "start"]
+
 
