@@ -61,6 +61,7 @@ async function main() {
   const server = new Server(port, shortCreator);
 
   const app = server.start();
+  console.log("✅ Server started");
 
   // todo add shutdown handler
 }
